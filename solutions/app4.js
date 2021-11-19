@@ -26,8 +26,21 @@
  * @returns {[{}, {}] | []} objektumok tömbjével tér vissza vagy hiba esetén 
  * üres tömbbel
  */
-
+async function getCustomers(url = '') {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    }
+    catch {
+        console.error(error);
+        return data = [];
+    }
+}
 
 /**
  * TODO: exportáld ki helyesen a getCustomers függvényt!
  */
+export {
+    getCustomers
+}
